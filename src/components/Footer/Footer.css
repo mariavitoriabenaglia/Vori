@@ -1,0 +1,27 @@
+/*
+  O Footer representa o rodapé da aplicação.
+
+  Flexbox é utilizado para centralizar
+  o conteúdo horizontalmente e verticalmente.
+*/
+.footer {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 24px 20px;
+
+  background-color: #111827;
+  color: #ffffff;
+}
+
+/*
+  O texto do rodapé fica centralizado
+  e utiliza um tamanho de fonte menor.
+*/
+.footer p {
+  font-size: 0.9rem;
+  text-align: center;
+}

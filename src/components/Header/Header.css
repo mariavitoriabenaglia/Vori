@@ -1,0 +1,33 @@
+/*
+  O Header representa o topo da aplicação.
+
+  Flexbox é utilizado para centralizar
+  o título horizontalmente e verticalmente.
+*/
+.header {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 24px;
+
+  background-color: #111827;
+  color: #ffffff;
+}
+
+/*
+  clamp() permite que o tamanho do título
+  se adapte ao tamanho da tela.
+
+  Primeiro valor = tamanho mínimo.
+  Segundo valor = tamanho adaptável.
+  Terceiro valor = tamanho máximo.
+*/
+.header h1 {
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  font-weight: 700;
+
+  letter-spacing: 2px;
+}
