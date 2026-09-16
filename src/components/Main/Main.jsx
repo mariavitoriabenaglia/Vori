@@ -4,12 +4,25 @@ import "./Main.css";
 
 function Main() {
   const [info, setInfo] = useState([]);
+  const [erro, setErro] = useState("");
 
   const pegarDados = async () => {
-    const dados = await axios.get("https://fakestoreapi.com/products");
-    setInfo(dados.data);
-    console.log(dados.data);
-  };
+    try{
+      const dados = await axios.get("https://fakestoreapi.com/products");
+      setInfo(dados.data);
+     // console.log(dados.data);
+    } catch(erroDaRequisicao){
+      setErro("Ocorreu um erro ao carregar os produtos. Tente novamente.")
+     // console.log(erroDaRequisicao)
+    }finally{
+      console.log("Requisição finalizada")
+    }
+
+  };  
+
+//Try: Tenta executar o código 
+//Catch: Se acontecer algum erro
+//Finally: Sempre executa, independente se a busca deu certo ou errado.
 
   useEffect(() => {
     pegarDados();
@@ -27,6 +40,8 @@ function Main() {
 
   return (
     <main className="main">
+      {erro && <p style={{color: "red"}}> {erro} </p>}
+
       <section className="products-container">
 
         {/* ----- Eletrônicos ----- */}
